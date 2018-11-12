@@ -21,10 +21,23 @@ class App extends Component {
     this.setState({ newTweet : true})
   }
 
-  submitTweet = (event) => {
-    event.preventDefault()
-    this.setState({ newTweet : false})
-    console.log(event.target)
+  postTweet = (tweet) => {
+    console.log(tweet)
+    fetch("http://localhost:3333/posts", {
+      method: "POST",
+      mode: "cors",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        "title": tweet.subjectVal,
+        "body": tweet.bodyVal,
+        "imageURL": tweet.URLVal,
+        "character_id": 1 
+      })
+    })
+    .then(response => response.json())
+    this.setState({ newTweet: false })
   }
 
   
@@ -32,7 +45,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header newTweetRender={this.newTweetRender}/>
-        {this.state.newTweet ? <NewTweet submitTweet={this.submitTweet}/> : ''}
+        {this.state.newTweet ? <NewTweet postTweet={this.postTweet}/> : ''}
         <Feed postList={this.state.postList}/>
       </div>
     )

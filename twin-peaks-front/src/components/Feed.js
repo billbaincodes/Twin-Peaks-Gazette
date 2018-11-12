@@ -6,7 +6,7 @@ const Feed = ({ postList }) => {
 
   return (
     <section className="feed">
-      {postList.map(post => <Post post={post}/>)}
+      {postList.map(post => <Post key={post.post_id} post={post}/>)}
     </section>
   )
   

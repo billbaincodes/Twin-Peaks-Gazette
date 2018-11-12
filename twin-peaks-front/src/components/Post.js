@@ -4,7 +4,7 @@ const Post = ({ post }) => {
   return(
     <article className="post">
       <header className="post-head">
-        <h4>@{post.name}</h4>
+        <h4>@ {post.name}</h4>
         <img src={post.avatarURL} alt="post" />
       </header>
       <main className="post-body">

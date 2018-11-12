@@ -1,28 +1,34 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
+import Header from './components/Header'
+import NewTweet from './components/NewTweet'
 
 class App extends Component {
+
+  state = {
+    newTweet : false
+  }
+
+  newTweetRender = () => {
+    this.setState({ newTweet : true})
+  }
+
+  submitTweet = (event) => {
+    event.preventDefault()
+    this.setState({ newTweet : false})
+    console.log(event.target)
+  }
+
+  
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Header newTweetRender={this.newTweetRender}/>
+        {this.state.newTweet ? <NewTweet submitTweet={this.submitTweet}/> : ''}
       </div>
-    );
+    )
   }
+
 }
 
-export default App;
+export default App

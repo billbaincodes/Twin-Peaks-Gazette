@@ -12,8 +12,8 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 2,
-          name: 'Audrey Horne',
-          avatarURL: "https://vignette.wikia.nocookie.net/twinpeaks/images/9/98/AudreyNew.jpg/revision/latest/scale-to-width-down/350?cb=20161026025355"
+          name: 'Laura Palmer',
+          avatarURL: "https://vignette.wikia.nocookie.net/twinpeaks/images/e/ef/Laura_Palmer%2C_the_Queen_Of_Hearts.jpg/revision/latest/scale-to-width-down/350?cb=20170615044123"
         },        {
           id: 3,
           name: 'Margaret Lanterman',

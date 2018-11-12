@@ -16,3 +16,12 @@ body {
   margin: 0rem 5rem 0rem 3rem;
   justify-content: space-between;
 }
+
+
+.post {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 25vw;
+  margin: 0 auto;
+}

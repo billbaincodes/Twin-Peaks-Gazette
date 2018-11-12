@@ -7,5 +7,5 @@ exports.up = function(knex, Promise) {
 }
 
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTableIfExists("post")
+  return knex.schema.dropTableIfExists("character")
 }

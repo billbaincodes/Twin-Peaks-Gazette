@@ -4,6 +4,7 @@ const getAll = (req, res, next) => {
 
   return knex.select('post.id AS post_id', 'post.title', 'post.body', 'post.imageURL', 'character.id AS character_id', 'character.name', 'character.avatarURL').from("post")
     .innerJoin("character", "post.character_id", "character.id")
+    .orderBy('post_id', 'desc')
     .then(posts => res.json({ posts : posts }))
 
 }

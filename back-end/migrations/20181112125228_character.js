@@ -1,9 +1,8 @@
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable("post", function(table) {
+  return knex.schema.createTable("character", function(table) {
     table.increments()
-    table.string("title")
-    table.string("body")
-    table.string("imageURL")
+    table.string("name")
+    table.string("avatarURL")
   })
 }
 

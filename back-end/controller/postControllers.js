@@ -2,8 +2,8 @@ const knex = require('../db/connection')
 
 const getAll = (req, res, next) => {
 
-  return knex('post')
-    .orderBy('id', 'asc')
+  return knex.select('*').from("post")
+    .innerJoin("character", "post.character_id", "character.id")
     .then(posts => res.json({ posts : posts }))
 
 }

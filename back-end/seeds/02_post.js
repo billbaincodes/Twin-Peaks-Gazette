@@ -8,19 +8,22 @@ exports.seed = function(knex, Promise) {
           id: 1,
           title: "weird peeps",
           body: "anyone else seeing weird people around",
-          imageURL: "https://picsum.photos/200"
+          imageURL: "https://picsum.photos/200",
+          character_id: 3
         },
         {
           id: 2,
           title: "pay attention to me",
           body: "im audrey horne and i need more attention on me than stupid laura",
-          imageURL: "https://picsum.photos/200"
+          imageURL: "https://picsum.photos/200",
+          character_id: 2
         },
         {
           id: 3,
           title: "ivy consumption",
           body: "does eat oats and and oats and little lambs eat ivy",
-          imageURL: "https://picsum.photos/200"
+          imageURL: "https://picsum.photos/200",
+          character_id: 1
         }
       ])
     })

@@ -9,9 +9,7 @@ const Feed = ({ postList }) => {
       {postList.map(post => <Post post={post}/>)}
     </section>
   )
-
-
-
+  
 }
 
 export default Feed

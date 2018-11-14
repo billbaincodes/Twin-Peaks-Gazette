@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component} from "react"
 
 class NewTweet extends Component {
 
@@ -16,7 +16,6 @@ class NewTweet extends Component {
     this.props.postTweet(this.state)
   }
 
-
   subjectListener = (event) => {
     this.setState({ subjectVal : event.target.value })
   }
@@ -28,7 +27,6 @@ class NewTweet extends Component {
   URLListener = (event) => {
     this.setState({ URLVal : event.target.value })
   }
-
 
   render() {
     return (
@@ -54,4 +52,4 @@ class NewTweet extends Component {
   }
 }
 
-export default NewTweet;
+export default NewTweet

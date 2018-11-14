@@ -2,7 +2,7 @@ const knex = require('../db/connection')
 
 const getAll = (req, res, next) => {
 
-  return knex.select('post.id AS post_id', 'post.title', 'post.body', 'post.imageURL', 'character.id AS character_id', 'character.name', 'character.avatarURL').from("post")
+  return knex.select('post.id AS post_id', 'post.title', 'post.body', 'post.imageURL', 'character.id AS character_id', 'character.name', 'character.handle', 'character.avatarURL').from("post")
     .innerJoin("character", "post.character_id", "character.id")
     .orderBy('post_id', 'desc')
     .then(posts => res.json({ posts : posts }))
@@ -28,18 +28,15 @@ const updatePost = (req, res, next) => {
     .update(body)
     .returning('*')
     .then(response => res.json({ updatedPost : response[0] }))
-
 }
 
 const deletePost = (req, res, next) => {
-
   id = req.params.id
   return knex('post')
     .where('id', id)
     .delete()
     .returning('*')
     .then(response => res.json({ deletedPost : response[0]}))
-
 }
 
 

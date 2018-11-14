@@ -8,7 +8,7 @@ exports.seed = function(knex, Promise) {
           id: 1,
           title: "Hey, what’s up, doc?",
           body: "Its Laura, in case you haven’t guessed. It’s Thursday the twenty-third and I’m so bored. Actually, I’m in kind of a weird mood. God, James is sweet, but he’s so dumb, and right now I can only take so much of sweet.",
-          imageURL: "https://m.media-amazon.com/images/M/MV5BMTM5Mzg1MjUyOV5BMl5BanBnXkFtZTgwMTU1Mjg0MDE@._V1_SY1000_CR0,0,686,1000_AL_.jpg",
+          imageURL: "http://4.bp.blogspot.com/-e-2NMAs1dag/Uvaq_HFxpjI/AAAAAAAAAVI/Cd27rl2NLT8/s1600/laurapalmer_woods.jpg",
           character_id: 2
         },
         {

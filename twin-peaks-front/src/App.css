@@ -4,12 +4,24 @@ body {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.site {
+  /* display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    "header header"
+    "main aside"; */
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .form-field {
   margin: 0rem 0rem 1rem 0rem;
 }
 
 .new-tweet {
   width: 60vw;
+  margin: 0rem 0rem 0rem 3rem;
 }
 
 .header {
@@ -17,16 +29,22 @@ body {
   margin: 0rem 5rem 0rem 3rem;
   justify-content: space-between;
   border-bottom: 1px white solid;
+  grid-area: header;
 }
 
+.feed {
+  grid-area: main;
+}
 
 .post {
   display: flex;
   flex-direction: column;
   align-content: center;
   width: 30vw;
+  padding: 1rem;
   margin: 1rem auto;
   border: 1px solid black;
+  background-color: rgba(85, 61, 61, 0.527);
 }
 
 .post-head {
@@ -36,20 +54,44 @@ body {
   align-items: center;
 }
 
-.post-body {
-  overflow: hidden;
-}
-
 .post-head > img{
   width: 80px;
   height: 80px;
 }
 
-.post-head > h4{
-  margin-left: 1rem;
+.post-head > address > h4{
+  margin: 0rem 0rem 0rem 1rem
 }
 
 .post-body > img {
   max-width:100%;
   max-height:100%;
 }
+
+.profile {
+  width: 25vw;
+  height: 30vh;
+  border: 1px solid black;
+  margin: 1rem;
+  background-color: rgba(85, 61, 61, 0.527);
+}
+
+.profile-head {
+  display: flex;
+  align-items: center;  
+  justify-content: space-between;
+  border: 1px solid black;
+  margin: 1rem;
+  background-color: rgba(85, 61, 61, 0.527);
+}
+
+.profile-head > address > h4{
+  margin: 0rem 0rem 0rem 1rem
+}
+
+
+.profile-pic {
+  width:80px;
+  height:80px;
+}
+

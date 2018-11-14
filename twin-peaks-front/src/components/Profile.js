@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 class Profile extends Component {
-
   constructor(props) {
     super(props)
     this.state = {
@@ -10,15 +9,14 @@ class Profile extends Component {
   }
 
   tweetSelector = event => {
-    this.setState({ selectedTweet: event.target.value });
+    this.setState({ selectedTweet: event.target.value })
   }
 
   deletePasser = () => {
     this.state.selectedTweet === undefined
-      ? alert("Invalid date")
-      : this.props.deleteTweet(this.state.selectedTweet);
+      ? alert("Invalid selection")
+      : this.props.deleteTweet(this.state.selectedTweet)
   }
-
 
   render() {
     return (
@@ -34,20 +32,26 @@ class Profile extends Component {
             alt="profile"
           />
         </header>
-        <button onClick={this.props.newTweetRender}>New Tweet</button>
-        <select onChange={this.tweetSelector}>
-          <option selected disabled>
-            Select a Tweet:
-          </option>
-          {this.props.postList.filter(post => post.character_id === 4).map(post =>
-              <option key={post.post_id} value={post.post_id}>
-                {post.title}
-              </option>
-          )}
-        </select>
-        <button onClick={this.deletePasser}> Delete</button>
+        <section className="profile-buttons">
+          <button onClick={this.props.newTweetRender}>New Tweet</button>
+          <br />
+          <br />
+          <select onChange={this.tweetSelector}>
+            <option selected>
+              Select a Tweet:
+            </option>
+            {this.props.postList
+              .filter(post => post.character_id === 4)
+              .map(post => (
+                <option key={post.post_id} value={post.post_id}>
+                  {post.title}
+                </option>
+              ))}
+          </select>
+          <button onClick={this.deletePasser}> Delete</button>
+        </section>
       </aside>
-    );
+    )
   }
 }
 

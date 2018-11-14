@@ -1,7 +1,18 @@
 body {
-  background: linear-gradient(0deg, rgb(63, 0, 0) 0%, rgb(136, 0, 0) 100%);
+  /* background: linear-gradient(0deg, rgb(63, 0, 0) 0%, rgb(136, 0, 0) 100%); */
+  background: 
+  linear-gradient(135deg, rgb(0, 0, 0) 25%, transparent 25%) -50px 0,
+  linear-gradient(225deg, rgb(0, 0, 0) 25%, transparent 25%) -50px 0,
+  linear-gradient(315deg, rgb(0, 0, 0) 25%, transparent 25%),
+  linear-gradient(45deg, rgb(0, 0, 0) 25%, transparent 25%);	
+  background-size: 100px 100px;
+  background-color: rgb(119, 119, 119);
   color: white;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1 {
+  font-size: 3em;
 }
 
 .site {
@@ -44,7 +55,7 @@ body {
   padding: 1rem;
   margin: 1rem auto;
   border: 1px solid black;
-  background-color: rgba(85, 61, 61, 0.527);
+  background-color: rgba(117, 0, 0, 0.767);
 }
 
 .post-head {
@@ -73,25 +84,21 @@ body {
   height: 30vh;
   border: 1px solid black;
   margin: 1rem;
-  background-color: rgba(85, 61, 61, 0.527);
+  background-color: rgba(117, 0, 0, 0.767);
 }
 
 .profile-head {
   display: flex;
   align-items: center;  
   justify-content: space-between;
-  border: 1px solid black;
   margin: 1rem;
-  background-color: rgba(85, 61, 61, 0.527);
 }
 
 .profile-head > address > h4{
   margin: 0rem 0rem 0rem 1rem
 }
 
-
 .profile-pic {
   width:80px;
   height:80px;
 }
-

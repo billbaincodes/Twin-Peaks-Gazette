@@ -1,20 +1,54 @@
-import React from 'react'
+import React, { Component } from "react";
 
-const Profile = ({newTweetRender}) => {
-  return(
-    <aside className="profile">
-      <header className="profile-head">
-        <address>
-          <h4>Welcome back, Dale Cooper!</h4>
-          <h4>@DamnFineCoffee</h4>
-        </address>
-        <img className="profile-pic" src="https://vignette.wikia.nocookie.net/p__/images/3/3a/Cooper_005.jpg/revision/latest?cb=20170928134456&path-prefix=protagonist" alt="profile"></img>
-      </header>
-      
-        <button onClick={newTweetRender}>New Tweet</button>
+class Profile extends Component {
 
-    </aside>
-  )
+  constructor(props) {
+    super(props)
+    this.state = {
+      selectedTweet: undefined
+    }
+  }
+
+  tweetSelector = event => {
+    this.setState({ selectedTweet: event.target.value });
+  }
+
+  deletePasser = () => {
+    this.state.selectedTweet === undefined
+      ? alert("Invalid date")
+      : this.props.deleteTweet(this.state.selectedTweet);
+  }
+
+
+  render() {
+    return (
+      <aside className="profile">
+        <header className="profile-head">
+          <address>
+            <h4>Welcome back, Dale Cooper!</h4>
+            <h4>@DamnFineCoffee</h4>
+          </address>
+          <img
+            className="profile-pic"
+            src="https://vignette.wikia.nocookie.net/p__/images/3/3a/Cooper_005.jpg/revision/latest?cb=20170928134456&path-prefix=protagonist"
+            alt="profile"
+          />
+        </header>
+        <button onClick={this.props.newTweetRender}>New Tweet</button>
+        <select onChange={this.tweetSelector}>
+          <option selected disabled>
+            Select a Tweet:
+          </option>
+          {this.props.postList.filter(post => post.character_id === 4).map(post =>
+              <option key={post.post_id} value={post.post_id}>
+                {post.title}
+              </option>
+          )}
+        </select>
+        <button onClick={this.deletePasser}> Delete</button>
+      </aside>
+    );
+  }
 }
 
 export default Profile

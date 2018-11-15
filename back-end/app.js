@@ -4,6 +4,7 @@ const port = process.env.PORT || 3333
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const postRoutes = require('./routes/postRoutes')
+const characterRoutes = require('./routes/characterRoutes')
 
 
 //middleware
@@ -25,6 +26,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/posts', postRoutes)
+app.use('/characters', characterRoutes)
 
 //error handling
 app.use(notFound)

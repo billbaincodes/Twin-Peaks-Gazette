@@ -18,6 +18,7 @@ class Profile extends Component {
       : this.props.deleteTweet(this.state.selectedTweet)
   }
 
+
   render() {
     return (
       <aside className="profile">

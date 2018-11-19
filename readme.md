@@ -1,2 +1,2 @@
 # Twin Peaks Gazette
-A twitter clone set in the bizarre hamlet of Twin Peaks, WA.
+A basic social media app set in the bizarre town of Twin Peaks, WA. 

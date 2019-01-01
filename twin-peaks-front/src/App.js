@@ -15,13 +15,13 @@ class App extends Component {
 
   componentDidMount() {
     this.postFetcher()
-    fetch("http://localhost:3333/characters")
+    fetch("https://tp-classic-back.herokuapp.com/characters")
     .then(response => response.json())
     .then(json => this.setState({userList : json.characters }))
   }
 
   postFetcher = () => {
-    fetch("http://localhost:3333/posts")
+    fetch("https://tp-classic-back.herokuapp.com/posts")
       .then(response => response.json())
       .then(json => this.setState({ postList: json.posts }))
   }
@@ -41,7 +41,7 @@ class App extends Component {
     if (tweet.subjectVal.length === 0 || tweet.bodyVal.length === 0) {
       alert("Please enter a body and title");
     } else {
-      fetch("http://localhost:3333/posts", {
+      fetch("https://tp-classic-back.herokuapp.com/posts", {
         method: "POST",
         mode: "cors",
         headers: {
@@ -61,7 +61,7 @@ class App extends Component {
   }
 
   deleteTweet = tweetID => {
-    fetch(`http://localhost:3333/posts/${tweetID}`, {
+    fetch(`https://tp-classic-back.herokuapp.com/posts/${tweetID}`, {
       method: "DELETE",
       mode: "cors",
       headers: {

@@ -31,8 +31,8 @@ class App extends Component {
   }
 
   changeUser = (event) => {
-    console.log(this.state.userList, event.target.value)
-    console.log(this.state.userList.filter(user => user.id == event.target.value))
+    // console.log(this.state.userList, event.target.value)
+    // console.log(this.state.userList.filter(user => user.id == event.target.value))
     this.setState({currentUser : parseInt(event.target.value) })
   } 
 
